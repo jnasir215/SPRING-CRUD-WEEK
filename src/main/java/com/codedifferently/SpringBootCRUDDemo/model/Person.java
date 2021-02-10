@@ -1,15 +1,13 @@
 package com.codedifferently.SpringBootCRUDDemo.model;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "persons")
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,11 +16,11 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "age")
+    private Integer age;
 
-    @Column(name = "price")
-    private BigDecimal price;
+    @Column(name = "bio")
+    private String bio;
 
     @CreationTimestamp
     private Date createdAt;
@@ -46,20 +44,20 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getBio() {
+        return bio;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public Date getCreatedAt() {
